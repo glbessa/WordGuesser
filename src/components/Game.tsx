@@ -2,7 +2,7 @@ import "./Game.css"
 
 import { useState, createRef } from 'react';
 
-export default function Game({ verifyLetter, pickedWord, pickedCategory, letters, guessedLetters, wrongLetters, guesses, score}: { verifyLetter: (letter: string) => void, pickedWord: string, pickedCategory: string, letters: string[], guessedLetters: string[], wrongLetters: string[], guesses: number, score:number }) {
+export default function Game({ verifyLetter, pickedCategory, letters, guessedLetters, wrongLetters, guesses, score}: { verifyLetter: (letter: string) => void, pickedCategory: string, letters: string[], guessedLetters: string[], wrongLetters: string[], guesses: number, score:number }) {
     const [actualLetter, setActualLetter] = useState<string>("");
     const letterInputRef = createRef<HTMLInputElement>();
 

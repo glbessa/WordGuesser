@@ -20,9 +20,9 @@ const stages = [
 
 function App() {
   const [ gameStage, setGameStage ] = useState(stages[0].name);
-  const [ words, _ ] = useState(wordsList);
+  const [ words, _setWords ] = useState(wordsList);
 
-  const [ pickedWord, setPickedWord ] = useState("");
+  const [ _pickedWord, setPickedWord ] = useState("");
   const [ pickedCategory, setPickedCategory ] = useState("");
   const [ letters, setLetters ] = useState<string[]>([]);
 
@@ -107,7 +107,6 @@ function App() {
     <>
       {gameStage === "start" && <StartScreen next={startGame}/>}
       {gameStage === "game" && <Game verifyLetter={verifyLetter}
-        pickedWord={pickedWord}
         pickedCategory={pickedCategory}
         letters={letters}
         guessedLetters={guessedLetters}
